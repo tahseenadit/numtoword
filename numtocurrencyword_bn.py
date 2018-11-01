@@ -1,3 +1,5 @@
+### Convert a number to bangla currency word.
+
 digitstens1 = ["ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"]
 digitstens2 = ["","ten","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"]
 digits = ["zero","one","two","three","four","five","six","seven","eight","nine"]
@@ -293,4 +295,5 @@ def convert(numbertoconvert):
     else:
         print("Taka "+converttoword(numlength, j, k, numword, digitstens1, digitstens2, digits, myVar, digit))
 
+#call the function and pass a number.
 convert(400.2)
