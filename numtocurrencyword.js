@@ -3,7 +3,10 @@ var digitstens1 = ["ten","eleven","twelve","thirteen","fourteen","fifteen","sixt
 var digitstens2 = ["","ten","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"];
 var digits = ["zero","one","two","three","four","five","six","seven","eight","nine"];
 
-var myVar = 100000001;
+var number = 100000001.00;
+number = number.toString().split(".");
+var myVar = number[0];
+var numlength2;
 var numlength = myVar.toString().length;
 var digit = myVar.toString()[1];
 var i = 0;
@@ -11,13 +14,22 @@ var j = 0;
 var k = 0;
 var numword = "";
 
-converttoword(numlength,j,k,numword,digitstens1,digitstens2,digits,myVar,digit);
+if(number.length > 1){
 
-function converttoword(i,j,k,numword,digitstens1,digitstens2,digits,myVar,digit){
-	
+	numlength2 = number[1].toString().length;             
+	converttopaisa(numlength2,numlength,j,k,numword,digitstens1,digitstens2,digits,myVar,number[1],digit);
+		        
+}else{
+
+	converttoword(numlength,j,k,numword,digitstens1,digitstens2,digits,myVar,digit);
+
+}
+
+function converttopaisa(i,numlength,j,k,numword,digitstens1,digitstens2,digits,myVar2,myVar,digit){
+	    
     j = j+1;
     k = i-j;
-	digit = myVar.toString()[k];
+    digit = myVar.toString()[k];
     numword1 = digits[parseInt(digit)];
     if(numword != "zero"){
     	numword = numword1;
@@ -45,6 +57,70 @@ function converttoword(i,j,k,numword,digitstens1,digitstens2,digits,myVar,digit)
               	numword = numword2;
               }else{
               	numword = numword2+" "+numword1;
+              }
+              
+            }
+          }
+          
+      }
+      j = j+1;
+      k = i-j;
+      if(k >= 0){
+      	
+        digit = myVar.toString()[k];
+    	numword3 = digits[parseInt(digit)];
+        if(numword3 == "zero"){
+        	numword = numword;
+        }else{
+        	numword = numword3+" hundred "+ numword;
+        }
+        
+      
+      }
+      
+    }
+    
+    numword = " taka and "+numword+ " paisa";
+    i = 0;
+    j = 0;
+    k = 0;
+    converttoword(numlength,j,k,numword,digitstens1,digitstens2,digits,myVar2,digit);
+    
+}
+
+
+function converttoword(i,j,k,numword,digitstens1,digitstens2,digits,myVar,digit){
+	    
+    j = j+1;
+    k = i-j;
+	digit = myVar.toString()[k];
+    numword1 = digits[parseInt(digit)];
+    if(numword != "zero"){
+    	numword = numword1+numword;
+    }
+  
+
+    j = j+1;
+    k=i-j;
+    if(k >= 0){
+      digit = parseInt(myVar.toString()[k]);
+      if(digit == 1){
+          digit = myVar.toString()[k+1];
+          numword2 = digitstens1[parseInt(digit)];
+          numword = numword2+numword;
+          
+      }else{
+      	  digitnext = parseInt(myVar.toString()[k+1]);
+          if(digit == 0 && digitnext==0){
+          	numword = ""+numword;
+          }else{
+            digit = myVar.toString()[k];
+            numword2 = digitstens2[parseInt(digit)];
+            if(numword2!=""){
+              if(numword1 == "zero"){
+              	numword = numword2+numword;
+              }else{
+              	numword = numword2+" "+numword1+numword;
               }
               
             }
