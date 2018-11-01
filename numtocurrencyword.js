@@ -80,7 +80,7 @@ function converttopaisa(i,numlength,j,k,numword,digitstens1,digitstens2,digits,m
       
     }
     
-    numword = " taka and "+numword+ " paisa";
+    numword = " and "+numword+ " paisa";
     i = 0;
     j = 0;
     k = 0;
