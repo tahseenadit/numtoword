@@ -11,9 +11,9 @@ var j = 0;
 var k = 0;
 var numword = "";
 
-converttoword(numlength,j,k,numword,mid_numwords,digitstens1,digitstens2,digits,myVar,digit);
+converttoword(numlength,j,k,numword,digitstens1,digitstens2,digits,myVar,digit);
 
-function converttoword(i,j,k,numword,mid_numwords,digitstens1,digitstens2,digits,myVar,digit){
+function converttoword(i,j,k,numword,digitstens1,digitstens2,digits,myVar,digit){
 	
     j = j+1;
     k = i-j;
@@ -66,7 +66,7 @@ function converttoword(i,j,k,numword,mid_numwords,digitstens1,digitstens2,digits
       
       }
       
-      converttothousand(i,j,k,numword,mid_numwords,digitstens1,digitstens2,digits,myVar,digit);
+      converttothousand(i,j,k,numword,digitstens1,digitstens2,digits,myVar,digit);
     }else if(numword != ""){
     	console.log(numword)
         numword = "";
@@ -75,7 +75,7 @@ function converttoword(i,j,k,numword,mid_numwords,digitstens1,digitstens2,digits
 }
 
 
-function converttothousand(i,j,k,numword,mid_numwords,digitstens1,digitstens2,digits,myVar,digit){
+function converttothousand(i,j,k,numword,digitstens1,digitstens2,digits,myVar,digit){
 	
     j = j+1;
     k = i-j;
@@ -113,7 +113,7 @@ function converttothousand(i,j,k,numword,mid_numwords,digitstens1,digitstens2,di
         }
       }
       
-      converttolakh(i,j,k,numwordth,mid_numwords,digitstens1,digitstens2,digits,myVar,digit);
+      converttolakh(i,j,k,numwordth,digitstens1,digitstens2,digits,myVar,digit);
     }else if(numwordth != ""){
     	console.log(numwordth)
         numwordth = "";
@@ -121,7 +121,7 @@ function converttothousand(i,j,k,numword,mid_numwords,digitstens1,digitstens2,di
     
 }
 
-function converttolakh(i,j,k,numword,mid_numwords,digitstens1,digitstens2,digits,myVar,digit){
+function converttolakh(i,j,k,numword,digitstens1,digitstens2,digits,myVar,digit){
 	
     j = j+1;
     k = i-j;
@@ -157,7 +157,7 @@ function converttolakh(i,j,k,numword,mid_numwords,digitstens1,digitstens2,digits
         }
       }
       
-      converttocrore(i,j,k,numwordth,mid_numwords,digitstens1,digitstens2,digits,myVar,digit);
+      converttocrore(i,j,k,numwordth,digitstens1,digitstens2,digits,myVar,digit);
     }else if(numwordth != ""){
     	console.log(numwordth)
         numwordth = "";
@@ -165,7 +165,7 @@ function converttolakh(i,j,k,numword,mid_numwords,digitstens1,digitstens2,digits
     
 }
 
-function converttocrore(i,j,k,numword,mid_numwords,digitstens1,digitstens2,digits,myVar,digit){
+function converttocrore(i,j,k,numword,digitstens1,digitstens2,digits,myVar,digit){
 	
     j = j+1;
     k = i-j;
