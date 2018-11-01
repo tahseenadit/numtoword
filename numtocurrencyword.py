@@ -127,7 +127,13 @@ def converttoword(i, j, k, numword, digitstens1, digitstens2, digits, myVar, dig
                 numword = numword
             else :
                 if len(numword) > 2:
-                    numword = numword3 + " hundred and "+ numword
+                    if len(detectpoint) > 1:
+                        if len(numword.split(",")[0]) > 2:
+                            numword = numword3 + " hundred and " + numword
+                        else:
+                            numword = numword3 + " hundred " + numword
+                    else:
+                        numword = numword3 + " hundred and "+ numword
                 else:
                     numword = numword3 + " hundred " + numword
 
@@ -287,4 +293,4 @@ def convert(numbertoconvert):
     else:
         print("Taka "+converttoword(numlength, j, k, numword, digitstens1, digitstens2, digits, myVar, digit))
 
-convert(402)
+convert(400.2)
